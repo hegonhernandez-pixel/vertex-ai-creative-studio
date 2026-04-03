@@ -1,14 +1,13 @@
 #!/bin/bash
 
 # Configuration
-PROJECT_ID="genai-blackbelt-fishfooding"
+PROJECT_ID="your-project-id" # CHANGE THIS TO YOUR PROJECT ID
 REGION="us-central1"
-#SERVICE_NAME="veo-variations-studio"
-SERVICE_NAME="test-multi-container"
+SERVICE_NAME="veo-variations-studio"
 SERVICE_ACCOUNT="veo-variations-sa@${PROJECT_ID}.iam.gserviceaccount.com"
 IMAGE_NAME="gcr.io/$PROJECT_ID/$SERVICE_NAME"
-BUCKET="genai-blackbelt-fishfooding-genmedia"
-EAP_GROUP="aaie-musicbox@google.com"
+BUCKET="your-gcs-bucket" # CHANGE THIS TO YOUR GCS BUCKET
+#EAP_GROUP="aaie-musicbox@google.com"
 
 echo "===================================================================="
 echo " Deploying Veo Variations Studio to Cloud Run"
