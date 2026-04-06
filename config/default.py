@@ -53,7 +53,7 @@ class NavConfig(BaseModel):
 class Default:
     """Defaults class"""
 
-    VERSION: str = "1.7.4"  # Fallback if package metadata is missing
+    VERSION: str = "1.7.5"  # Fallback if package metadata is missing
     BUILD_COMMIT: str = ""
     BUILD_DATE: str = ""
 
@@ -172,6 +172,10 @@ class Default:
         "CHARACTER_CONSISTENCY_GEMINI_MODEL",
         MODEL_ID,
     )
+    CHARACTER_CONSISTENCY_GEMINI_LOCATION: str = os.environ.get(
+        "CHARACTER_CONSISTENCY_GEMINI_LOCATION",
+        "global",
+    )
 
     # Lyria
     LYRIA_LOCATION: str = os.environ.get("LYRIA_LOCATION", "us-central1")
@@ -188,10 +192,6 @@ class Default:
     MODEL_IMAGEN4_FAST = "imagen-4.0-fast-generate-001"
     MODEL_IMAGEN4_ULTRA = "imagen-4.0-ultra-generate-001"
     MODEL_IMAGEN_EDITING = "imagen-3.0-capability-001"
-    MODEL_IMAGEN_PRODUCT_RECONTEXT: str = os.environ.get(
-        "MODEL_IMAGEN_PRODUCT_RECONTEXT",
-        "imagen-product-recontext-preview-06-30",
-    )
 
     IMAGEN_GENERATED_SUBFOLDER: str = os.environ.get(
         "IMAGEN_GENERATED_SUBFOLDER",
