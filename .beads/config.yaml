@@ -61,3 +61,6 @@ issue-prefix: "gmcs"
 # - linear.api-key
 # - github.org
 # - github.repo
+dolt:
+  server_mode: true
+  shared_server: true
