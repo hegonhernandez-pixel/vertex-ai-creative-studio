@@ -64,3 +64,5 @@ issue-prefix: "gmcs"
 dolt:
   server_mode: true
   shared_server: true
+
+dolt.shared-server: true
