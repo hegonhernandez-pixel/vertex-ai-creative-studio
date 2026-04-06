@@ -8,26 +8,6 @@
       "description": "The home page of the application."
     },
     {
-      "id": 6,
-      "display": "Imagen",
-      "icon": "image",
-      "route": "/imagen",
-      "group": "foundation",
-      "mode": "image",
-      "description": "Generate images from text prompts using Imagen.",
-      "video_url": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/imagen__page_cover.mp4"
-    },
-    {
-      "id": 8,
-      "display": "Edit Images",
-      "icon": "edit",
-      "route": "/edit_images",
-      "group": "foundation",
-      "mode": "image",
-      "feature_flag": "EDIT_IMAGES_ENABLED",
-      "description": "Edit images using inpainting and outpainting."
-    },
-    {
       "id": 10,
       "display": "Veo",
       "icon": "movie_filter",
@@ -60,18 +40,7 @@
       "video_object_position": "bottom"
     },
     {
-      "id": 15,
-      "display": "Chirp 3 HD",
-      "icon": "graphic_eq",
-      "route": "/chirp-3hd",
-      "group": "foundation",
-      "mode": "speech",
-      "description": "Generate high-definition speech from text using Chirp 3.",
-      "video_url": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/lyria_realtime_header.mp4",
-      "video_object_position": "bottom"
-    },
-    {
-      "id": 20,
+      "id": 16,
       "display": "Lyria",
       "icon": "music_note",
       "route": "/lyria",
@@ -83,7 +52,7 @@
       "video_object_position": "bottom"
     },
     {
-      "id": 25,
+      "id": 18,
       "display": "Gemini",
       "icon": "spark",
       "route": "/gemini-writers-workshop",
@@ -92,6 +61,37 @@
       "description": "Collaborate with Gemini in the Writers Workshop",
       "video_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_videos/capability__native-audio_16-9.mp4",
       "video_object_position": "bottom"
+    },
+    {
+      "id": 20,
+      "display": "Chirp 3 HD",
+      "icon": "graphic_eq",
+      "route": "/chirp-3hd",
+      "group": "foundation",
+      "mode": "speech",
+      "description": "Generate high-definition speech from text using Chirp 3.",
+      "video_url": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/lyria_realtime_header.mp4",
+      "video_object_position": "bottom"
+    },
+    {
+      "id": 22,
+      "display": "Imagen",
+      "icon": "image",
+      "route": "/imagen",
+      "group": "foundation",
+      "mode": "image",
+      "description": "Generate images from text prompts using Imagen.",
+      "video_url": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/imagen__page_cover.mp4"
+    },
+    {
+      "id": 24,
+      "display": "Edit Images",
+      "icon": "edit",
+      "route": "/edit_images",
+      "group": "foundation",
+      "mode": "image",
+      "feature_flag": "EDIT_IMAGES_ENABLED",
+      "description": "Edit images using inpainting and outpainting."
     },
     {
       "id": 30,
