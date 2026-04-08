@@ -16,15 +16,15 @@ GOOGLE_CLOUD_LOCATION="your-location" #e.g. us-central1
 GOOGLE_GENAI_USE_VERTEXAI="True"
 ```
 
-## Start the Imagen MCP Server
+## Start the Nanobanana MCP Server
 
-The agent example contains two MCP servers using STDIO (Veo, Chirp 3) and one using the SSE protocol (Imagen).
+The agent example contains two MCP servers using STDIO (Veo, Chirp 3) and one using the SSE protocol (Nanobanana).
 
-Start the Imagen MCP Server in a separate terminal:
+Start the Nanobanana MCP Server in a separate terminal:
 
 ```bash
 export PROJECT_ID=$(gcloud config get project)
-mcp-imagen-go --transport sse
+mcp-nanobanana-go --transport sse
 ```
 
 

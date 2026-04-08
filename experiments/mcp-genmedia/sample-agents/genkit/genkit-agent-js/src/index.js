@@ -21,12 +21,12 @@ import { mcpClient } from "genkitx-mcp";
 
 logger.setLogLevel("debug");
 
-const imagenClient = mcpClient({
-  name: "imagen",
+const nanobananaClient = mcpClient({
+  name: "nanobanana",
   version: "1.0.0",
   //serverUrl: "http://localhost:8080/sse",
   serverProcess: {
-    command: './mcp-imagen-go',
+    command: './mcp-nanobanana-go',
     env: {"PROJECT_ID": "ghchinoy-genai-sa"},
   },
 });
@@ -51,7 +51,7 @@ const chirp3Client = mcpClient({
 
 const ai = genkit({
   plugins: [vertexAI({ location: "us-central1" }), 
-    imagenClient, 
+    nanobananaClient, 
     veoClient, 
     chirp3Client
   ],

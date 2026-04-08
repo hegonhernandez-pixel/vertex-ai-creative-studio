@@ -190,7 +190,7 @@ gemini extensions install ./sample_extensions/google-genmedia
 ### Partial Extension Configurations
 
 If you only want a subset of the GenMedia tools, we have provided partial configurations:
-- **Images Only**: `gemini extensions install ./sample_extensions/google-genmedia-images` (Installs `nanobanana` and `imagen`)
+- **Images Only**: `gemini extensions install ./sample_extensions/google-genmedia-images` (Installs `nanobanana` and `gemini`)
 - **Video Only**: `gemini extensions install ./sample_extensions/google-genmedia-video` (Installs `veo` and `avtool`)
 
 ### 🛠️ Using Expert Agent Skills
@@ -243,8 +243,8 @@ If you encounter errors like the following when starting Gemini CLI:
 ```text
 Error connecting to MCP server 'veo': failed to start or connect to MCP server 'veo' {"command":"mcp-veo-go","trust":true}; 
 Error: spawn mcp-veo-go ENOENT
-Error connecting to MCP server 'imagen': failed to start or connect to MCP server 'imagen' {"command":"mcp-imagen-go","trust":true}; 
-Error: spawn mcp-imagen-go ENOENT
+Error connecting to MCP server 'nanobanana': failed to start or connect to MCP server 'nanobanana' {"command":"mcp-nanobanana-go","trust":true}; 
+Error: spawn mcp-nanobanana-go ENOENT
 Error connecting to MCP server 'chirp3-hd': failed to start or connect to MCP server 'chirp3-hd' {"command":"mcp-chirp3-go","trust":true}; 
 Error: spawn mcp-chirp3-go ENOENT
 Error connecting to MCP server 'lyria': failed to start or connect to MCP server 'lyria' {"command":"mcp-lyria-go","trust":true}; 
@@ -255,7 +255,7 @@ Error connecting to MCP server 'gemini': failed to start or connect to MCP serve
 Error: spawn mcp-gemini-go ENOENT
 ```
 
-**Cause:** This error indicates that the Genmedia MCP server binaries (installed via Go) are not in your terminal's `PATH`. The Gemini CLI cannot locate the commands like `mcp-veo-go`, `mcp-imagen-go`, etc.
+**Cause:** This error indicates that the Genmedia MCP server binaries (installed via Go) are not in your terminal's `PATH`. The Gemini CLI cannot locate the commands like `mcp-veo-go`, `mcp-nanobanana-go`, etc.
 
 **Solution:** Add the Go binary directory to your `PATH`.
 
@@ -308,7 +308,7 @@ After updating your `PATH`, verify that the MCP servers are accessible:
 
 ```bash
 which mcp-veo-go
-which mcp-imagen-go
+which mcp-nanobanana-go
 which mcp-chirp3-go
 which mcp-gemini-go
 ```
@@ -318,7 +318,7 @@ Each command should return a path like `/home/username/go/bin/mcp-veo-go`. If th
 You can also test individual servers directly:
 
 ```bash
-mcp-imagen-go --help
+mcp-nanobanana-go --help
 ```
 
-This should display the help message for the Imagen MCP server without errors.
+This should display the help message for the NanoBanana MCP server without errors.

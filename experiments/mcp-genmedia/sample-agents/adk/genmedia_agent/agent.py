@@ -87,6 +87,6 @@ root_agent = LlmAgent(
         If you're asked to translate into other languages, please do.
         """,
     tools=[
-       imagen, chirp3, veo, avtool,
+       nanobanana, chirp3, veo, avtool,
     ],
 )
