@@ -42,7 +42,7 @@ BUCKET="${VEO_BUCKET:-your-gcs-bucket}"
 BUCKET="${BUCKET#gs://}"
 
 # Define static service and image naming conventions.
-SERVICE_NAME="veo-variations-studio"
+SERVICE_NAME="${SERVICE_NAME:-veo-variations-studio}"
 SERVICE_ACCOUNT="veo-variations-sa@${PROJECT_ID}.iam.gserviceaccount.com"
 IMAGE_NAME="gcr.io/$PROJECT_ID/$SERVICE_NAME"
 
