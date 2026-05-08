@@ -60,6 +60,11 @@ analytics_logger = get_logger("genmedia.analytics")
 
 def log_page_view(page_name: str, session_id: str = None):
     """Logs a page view event."""
+    try:
+        user_email = me.state(AppState).user_email
+    except Exception:
+        user_email = "unknown"
+        
     extra_data = {
         "event_type": "page_view",
         "page_name": page_name,
@@ -70,6 +75,11 @@ def log_page_view(page_name: str, session_id: str = None):
 
 def log_ui_click(element_id: str, page_name: str, session_id: str = None, extras: dict = None):
     """Logs a UI click event."""
+    try:
+        user_email = me.state(AppState).user_email
+    except Exception:
+        user_email = "unknown"
+        
     extra_data = {
         "event_type": "ui_click",
         "element_id": element_id,
