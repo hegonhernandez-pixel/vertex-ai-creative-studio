@@ -21,8 +21,6 @@ import time
 from contextlib import contextmanager
 
 import mesop as me
-from google.cloud import logging as cloud_logging
-
 from state.state import AppState
 
 
@@ -49,16 +47,10 @@ def get_logger(name: str):
     if not logger.handlers:
         logger.setLevel(logging.INFO)
 
-        # Check if we are in a Google Cloud environment (e.g., Cloud Run)
-        if os.environ.get("K_SERVICE"):
-            # The Google Cloud Logging handler automatically recognizes JSON fields
-            # and parses them as structured logs.
-            client = cloud_logging.Client()
-            handler = client.get_default_handler()
-        else:
-            # For local development, use a standard handler with our custom JSON formatter.
-            handler = logging.StreamHandler()
-            handler.setFormatter(JsonFormatter())
+        # Use a standard StreamHandler with our custom JSON formatter.
+        # Cloud Run automatically intercepts stdout and parses JSON strings into structured jsonPayload logs.
+        handler = logging.StreamHandler()
+        handler.setFormatter(JsonFormatter())
 
         logger.addHandler(handler)
     return logger
