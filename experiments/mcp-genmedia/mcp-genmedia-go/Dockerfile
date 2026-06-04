@@ -9,17 +9,21 @@ ARG SERVER_NAME
 RUN if [ -z "$SERVER_NAME" ]; then echo "SERVER_NAME build arg is required" && exit 1; fi
 
 # Copy the workspace files and all modules to compile.
-COPY go.work go.work.sum ./
 COPY mcp-common/ mcp-common/
 COPY ${SERVER_NAME}/ ${SERVER_NAME}/
 
 # Build the binary inside the target module directory.
 WORKDIR /app/${SERVER_NAME}
-RUN CGO_ENABLED=0 GOOS=linux go build -v -o /app/server-bin
+RUN CGO_ENABLED=0 GOOS=linux GOWORK=off go build -v -o /app/server-bin
 
 # Use a minimal alpine image for the runtime.
 FROM alpine:3.18
-RUN apk --no-cache add ca-certificates ffmpeg
+
+ARG SERVER_NAME
+RUN apk --no-cache add ca-certificates \
+    && if [ "$SERVER_NAME" = "mcp-avtool-go" ]; then \
+         echo "Installing ffmpeg for avtool..." && apk --no-cache add ffmpeg; \
+       fi
 
 WORKDIR /app
 COPY --from=builder /app/server-bin /app/server-bin
